@@ -5,5 +5,4 @@ deployment:
     - export DEPLOYPATH=/home/s5bjgx5tf9b4/public_html/pingdoot.com/
     - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/cp -R assets css js "$DEPLOYPATH"
-    - /bin/cp -f index.html about.html ai-automation.html book-demo.html cloud-telephony.html contact-centre.html contact.html cookies.html industries.html ivr-call-routing.html omnichannel-messaging.html platform.html privacy.html terms.html "$DEPLOYPATH"
-    - /bin/cp -f favicon.svg robots.txt sitemap.xml "$DEPLOYPATH"
+    - /bin/cp -f *.html favicon.svg robots.txt sitemap.xml "$DEPLOYPATH"
