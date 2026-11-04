@@ -28,3 +28,14 @@ html{scrollbar-width:thin;scrollbar-color:var(--sb-thumb) var(--sb-track)}
 .home-enquiry-copy h2{font-size:clamp(1.9rem,3vw,3rem)}
 .home-enquiry-copy p{font-size:16px}
 @media(max-width:800px){.home-enquiry-wrap{grid-template-columns:1fr;gap:36px}}
+
+/* ── Legal pages (Privacy, Terms, Cookies) ──────────────────────── */
+.legal-layout{max-width:860px;margin:0 auto}
+.legal-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.legal-meta-item{font-size:11px;font-weight:700;color:var(--blue);background:#eef4ff;border:1px solid #d0e2ff;padding:5px 12px;border-radius:99px}
+.legal-body{color:var(--ink)}
+.legal-body p{font-size:15px;line-height:1.8;color:#4a5a72;margin-bottom:0}
+.legal-block{border-top:1px solid var(--line);padding:28px 0 4px;margin-bottom:4px}
+.legal-block:first-child{border-top:none;padding-top:0}
+.legal-heading{font-size:1rem;font-weight:700;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em}
+@media(max-width:800px){.legal-block{padding:20px 0 4px}}
