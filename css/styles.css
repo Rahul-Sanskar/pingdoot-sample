@@ -17,3 +17,45 @@
 
 /* Firefox */
 html{scrollbar-width:thin;scrollbar-color:var(--sb-thumb) var(--sb-track)}
+
+/* ── Hero 3-column layout with inline enquiry form ─────────────── */
+.hero-3col .hero-grid{grid-template-columns:.85fr .72fr .9fr;gap:36px;align-items:start;padding-top:10px}
+
+/* Form panel */
+.hero-form-panel{position:relative;z-index:2}
+.hero-form-inner{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:22px;padding:26px 24px;box-shadow:0 28px 70px rgba(0,0,0,.3)}
+.hero-form-head{margin-bottom:20px}
+.hero-form-badge{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#55d8f0;background:rgba(85,216,240,.12);border:1px solid rgba(85,216,240,.25);padding:5px 10px;border-radius:99px;margin-bottom:10px}
+.hero-form-inner h3{color:#fff;font-size:1.25rem;margin:0 0 6px}
+.hero-form-inner>div>p{color:rgba(198,212,233,.85);font-size:12px;margin:0}
+.hero-form-inner .field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.hero-form-inner .field label{font-size:11px;font-weight:700;color:rgba(198,212,233,.8)}
+.hero-form-inner .field input,
+.hero-form-inner .field select,
+.hero-form-inner .field textarea{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;color:#fff;font:inherit;font-size:12px;outline:none;transition:border-color .2s,box-shadow .2s}
+.hero-form-inner .field input::placeholder,
+.hero-form-inner .field textarea::placeholder{color:rgba(255,255,255,.35)}
+.hero-form-inner .field input:focus,
+.hero-form-inner .field select:focus,
+.hero-form-inner .field textarea:focus{border-color:rgba(85,216,240,.6);box-shadow:0 0 0 3px rgba(85,216,240,.12)}
+.hero-form-inner .field select option{background:#0a2045;color:#fff}
+.hf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* Carousel column keeps same proportions */
+.hero-3col .hero-visual{align-self:start}
+.hero-3col .floating-stat{top:20px;left:-18px}
+
+/* Responsive — collapse form panel below carousel on tablet */
+@media(max-width:1100px){
+  .hero-3col .hero-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .hero-3col .hero-copy-wrap{grid-column:1/-1}
+  .hero-form-panel{order:2}
+  .hero-3col .hero-visual{order:1}
+}
+@media(max-width:800px){
+  .hero-3col .hero-grid{grid-template-columns:1fr}
+  .hero-3col .hero-visual{order:0}
+  .hero-form-panel{order:1}
+  .hf-row{grid-template-columns:1fr}
+  .hero-3col .floating-stat{left:12px}
+}
