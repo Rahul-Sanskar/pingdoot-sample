@@ -4,3 +4,58 @@
 @media(max-width:800px){.container{width:min(var(--max),calc(100% - 34px))}.topbar-inner{justify-content:center}.topbar-inner span:last-child{display:none}.nav-wrap{height:74px}.brand img{width:156px;height:55px}.menu-toggle{display:inline-flex;align-items:center;justify-content:center}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:0;right:0;top:74px;background:white;border-bottom:1px solid var(--line);padding:18px 24px 24px;align-items:stretch;flex-direction:column;gap:0;box-shadow:0 18px 25px rgba(8,31,72,.08)}.nav-links.open{display:flex}.nav-links a{padding:12px 0;border-bottom:1px solid #eef2f7;font-size:14px}.nav-links a:last-child{border:0}.hero{padding:65px 0 48px;min-height:auto}.hero-grid{grid-template-columns:1fr;gap:36px}.hero h1{font-size:clamp(2.8rem,11vw,4.5rem)}.hero-copy{font-size:15px}.hero-carousel{min-height:380px}.slide{min-height:358px}.floating-stat{top:15px;left:15px}.trust-inner{align-items:flex-start;flex-direction:column}.section{padding:74px 0}.split,.page-content-grid,.form-layout{grid-template-columns:1fr;gap:34px}.split-image{min-height:340px}.steps{grid-template-columns:repeat(2,1fr);row-gap:28px}.cta-band{padding:36px 26px;align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:repeat(2,1fr);gap:32px}.page-hero{padding:66px 0}.form-card{padding:22px}}
 @media(max-width:520px){.container{width:calc(100% - 30px)}.hero-actions .btn{width:100%}.hero-carousel{padding:7px;min-height:340px}.slide{min-height:326px}.slide-content{left:20px;right:20px;bottom:22px}.slide-content h3{font-size:1.55rem}.carousel-ui{padding:0 3px}.cards{grid-template-columns:1fr}.industries-grid{grid-template-columns:1fr 1fr}.industry{min-height:130px;padding:15px}.industry h3{font-size:13px}.steps{grid-template-columns:1fr}.step{padding-top:15px}.footer-grid{grid-template-columns:1fr 1fr;gap:26px}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column}.footer-legal{flex-wrap:wrap}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head{margin-bottom:32px}.trust-strip{padding:20px 0}.channel-list{gap:15px}.cta-band .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* ── Custom scrollbar ───────────────────────────────────────────── */
+:root{--sb-size:8px;--sb-track:#e8eef7;--sb-thumb:#1268ef;--sb-thumb-hover:#0a4ecb}
+
+/* Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar{width:var(--sb-size);height:var(--sb-size)}
+::-webkit-scrollbar-track{background:var(--sb-track);border-radius:99px}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--cyan) 0%,var(--sb-thumb) 100%);border-radius:99px;border:2px solid var(--sb-track);transition:background .2s}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#4de4ff 0%,var(--sb-thumb-hover) 100%)}
+::-webkit-scrollbar-corner{background:var(--sb-track)}
+
+/* Firefox */
+html{scrollbar-width:thin;scrollbar-color:var(--sb-thumb) var(--sb-track)}
+
+/* ── Hero 3-column layout with inline enquiry form ─────────────── */
+.hero-3col .hero-grid{grid-template-columns:.85fr .72fr .9fr;gap:36px;align-items:start;padding-top:10px}
+
+/* Form panel */
+.hero-form-panel{position:relative;z-index:2}
+.hero-form-inner{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:22px;padding:26px 24px;box-shadow:0 28px 70px rgba(0,0,0,.3)}
+.hero-form-head{margin-bottom:20px}
+.hero-form-badge{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#55d8f0;background:rgba(85,216,240,.12);border:1px solid rgba(85,216,240,.25);padding:5px 10px;border-radius:99px;margin-bottom:10px}
+.hero-form-inner h3{color:#fff;font-size:1.25rem;margin:0 0 6px}
+.hero-form-inner>div>p{color:rgba(198,212,233,.85);font-size:12px;margin:0}
+.hero-form-inner .field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.hero-form-inner .field label{font-size:11px;font-weight:700;color:rgba(198,212,233,.8)}
+.hero-form-inner .field input,
+.hero-form-inner .field select,
+.hero-form-inner .field textarea{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px 12px;color:#fff;font:inherit;font-size:12px;outline:none;transition:border-color .2s,box-shadow .2s}
+.hero-form-inner .field input::placeholder,
+.hero-form-inner .field textarea::placeholder{color:rgba(255,255,255,.35)}
+.hero-form-inner .field input:focus,
+.hero-form-inner .field select:focus,
+.hero-form-inner .field textarea:focus{border-color:rgba(85,216,240,.6);box-shadow:0 0 0 3px rgba(85,216,240,.12)}
+.hero-form-inner .field select option{background:#0a2045;color:#fff}
+.hf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* Carousel column keeps same proportions */
+.hero-3col .hero-visual{align-self:start}
+.hero-3col .floating-stat{top:20px;left:-18px}
+
+/* Responsive — collapse form panel below carousel on tablet */
+@media(max-width:1100px){
+  .hero-3col .hero-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+  .hero-3col .hero-copy-wrap{grid-column:1/-1}
+  .hero-form-panel{order:2}
+  .hero-3col .hero-visual{order:1}
+}
+@media(max-width:800px){
+  .hero-3col .hero-grid{grid-template-columns:1fr}
+  .hero-3col .hero-visual{order:0}
+  .hero-form-panel{order:1}
+  .hf-row{grid-template-columns:1fr}
+  .hero-3col .floating-stat{left:12px}
+}
